@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Bubalus Arnee - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilow.css') }}" type="text/css">
+</head>
+<style>
+
+</style>
+<body>
+    <div>
+        <div>
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Social Bubalus Arnee" class='logo_login'>
+        </div>
+
+        <br>
+
+        <div class='contenedor'>
+            
+            <h1>Inicio de Sesión</h1>
+                <form name = "flogin" id="flogin" method="POST" action="/login/">
+                    <div class = 'fila'>
+                        <div class = '1'>&nbsp;</div>
+                        <div class = '8'>{{ form.usr(size=40, minlength = 8, maxlength = 40)}}</div>
+                        <div class = '1'>&nbsp;</div>
+                    </div>
+                    <div class = 'fila'> <br/> </div>
+                    <div class = 'fila'>
+                        <div class = '1'>&nbsp;</div>
+                        <div class = '8'>{{ form.pwd(size=40, minlength = 8, maxlength = 40)}}</div>
+                        <div class = '1'>&nbsp;</div>
+                    </div>
+                    <div class = 'fila'> <br> </div>
+                    <div class = 'fila'> <br> <hr> </div>
+                    <div class = 'fila'> <br> </div>
+                    <div class = 'fila'>
+                        <div class='c075'>&nbsp;</div>
+                        <div class='c45'>{{ form.btnLogin }}</div>
+                        <a href="/registro">
+                            <div class='c45'style = float="right"><input type="button" name="registro" id="registo" value = "Registrarse"></div>
+                        </a>
+                    </div>
+                    
+                    {% for msg in get_flashed_messages() %}
+                    <div class='fila'> {{ msg }}</div>
+                    {% endfor %}
+
+                    <div class = 'fila'><br></div>
+                </form>
+
+            <div class='link'>
+                <a href="file:/c:\html\index.htm">¿Olvidaste tu contraseña?</a>        
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
